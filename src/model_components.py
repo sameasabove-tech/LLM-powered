@@ -1,6 +1,8 @@
 
-from dataclasses import dataclass
 import time
+from uuid import uuid1
+from dataclasses import dataclass
+
 
 @dataclass
 class PromptInput:
@@ -10,7 +12,7 @@ class PromptInput:
     """
     text_original: str
     text_processed: str
-    id: int = 1 # set id to 1, but change this to call the util function after 
+    id = uuid1() 
     time_stamp = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(time.time()))
 
 
@@ -21,5 +23,5 @@ class PromptOutput:
     
     """
     text: str
-    id: int = 1
+    id: int 
 
